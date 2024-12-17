@@ -108,10 +108,8 @@ pub struct UnpackedDecimal {
 #[cfg_attr(
     feature = "rkyv",
     derive(Archive, Deserialize, Serialize),
-    archive(compare(PartialEq)),
-    archive_attr(derive(Clone, Copy, Debug))
+    rkyv(compare(PartialEq), derive(Clone, Copy, Debug))
 )]
-#[cfg_attr(feature = "rkyv-safe", archive(check_bytes))]
 pub struct Decimal {
     // Bits 0-15: unused
     // Bits 16-23: Contains "e", a value between 0-28 that indicates the scale
