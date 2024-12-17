@@ -108,7 +108,7 @@ pub struct UnpackedDecimal {
 #[cfg_attr(
     feature = "rkyv",
     derive(Archive, Deserialize, Serialize),
-    rkyv(compare(PartialEq), derive(Clone, Copy, Debug, Eq, PartialEq))
+    rkyv(compare(PartialEq), derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd))
 )]
 pub struct Decimal {
     // Bits 0-15: unused
